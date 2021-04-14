@@ -7,11 +7,12 @@ public abstract class Clothing extends PApplet {
 PApplet app;
 protected int posX,posY,tam;
 protected boolean isInteract;
+protected String cloth;
 protected PImage dress;
 protected PImage hat;
 protected PImage jewels;
 protected PImage shoes;
-public Clothing(int posX, int posY, int tam, boolean isInteract, PApplet app) {
+public Clothing(int posX, int posY, int tam, String cloth, boolean isInteract, PApplet app) {
 	
 	this.posX=posX;
 	this.posY=posY;
