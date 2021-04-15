@@ -7,19 +7,21 @@ import processing.core.PApplet;
 public class Logic extends PApplet {
 	String[] loadStory;
 	String[] loadStoryModify;
-	String[] storyWords;
-	String[] arrayWords;
+	ArrayList<String> storyWords;
+	
 	ArrayList<Clothing> selectWords;
 	PApplet app;
 	public Logic(PApplet app) {
 		this.app = app;
 		loadStory = app.loadStrings("texts/story.txt");
 		loadStoryModify = app.loadStrings("texts/storyModify.txt");
+		storyWords=new ArrayList<String>();
 	
 	for (int index = 0; index < loadStory.length; index++) {
-		arrayWords = loadStory[index].split(" ");
+		String[] arrayWords = loadStory[index].split(" ");
 
 		for (int j = 0; j < arrayWords.length; j++) {
+			storyWords.add(arrayWords[j]);
 			if(arrayWords[j].equals("vestido")) {
 			//	selectWords.add(new Dress(100,100,100,"vestido",false,this));
 				System.out.println("vestido");
@@ -40,10 +42,10 @@ public class Logic extends PApplet {
 			//selectWords.add(new Clothing())
 		}
 	}
-	for (int i = 0; i < arrayWords.length; i++) {
-		System.out.println(arrayWords[i]);
-	}
 	
+	for (int i = 0; i < storyWords.size(); i++) {
+		System.out.println(storyWords.get(i));
+	}
 
 }
 }
